@@ -114,7 +114,6 @@ dl,
 ol,
 ul {
   margin-top: 0;
-  margin-bottom: 1em
 }
 
 ol ol,
@@ -183,17 +182,8 @@ a:focus {
   text-decoration-skip-ink: auto
 }
 
-a:hover {
-  color: #6ba1ff
-}
-
-a:active {
-  color: #2d60d6
-}
-
 a:active,
 a:hover {
-  text-decoration: none;
   outline: 0
 }
 
@@ -389,12 +379,6 @@ body {
   transform: translateZ(0);
 }
 
-a:focus {
-  text-decoration: none
-}
-
-
-
 input[type=checkbox],
 input[type=radio] {
   display: none
@@ -404,9 +388,7 @@ input[type=radio] {
   white-space: pre-line
 }
 
-
-
-浮动清楚 .clearfix {
+.clearfix {
   zoom: 1
 }
 
@@ -421,12 +403,12 @@ input[type=radio] {
 }
 
 /* 滚动条 */
-::-moz-selection {
+/* ::-moz-selection {
   color: #fff;
-  background: #4ac227;
+  background: #f8f8f9;
 }
 
 ::selection {
   color: #fff;
-  background: #4ac227
-}
+  background: #f8f8f9
+} */

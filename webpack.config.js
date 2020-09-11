@@ -21,7 +21,7 @@ module.exports = {
   },
   output: {
     path: resolve(__dirname, './dist'),
-    filename: this.mode === 'production' ? 'js/[name].[chunkhash].js' : 'js/[id]-[hash].js'
+    filename: this.mode === 'production' ? 'js/[name].[chunkhash].js' : 'js/[hash:10].js' //每次打包hash改变，造成缓存失效 在生产环境才有效（chunkhash,hash,contenthash）
   },
   module: {
     rules: [
@@ -112,6 +112,7 @@ module.exports = {
   externals: {
     //jquery: 'jquery'
   },
+  devtool: 'source-map', //调试代码
   //配置测试服务器
   devServer: {
     contentBase: resolve(__dirname, 'dist'),

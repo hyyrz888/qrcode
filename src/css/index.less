@@ -1,0 +1,60 @@
+#createCodeBox{
+  background-color:#fff;
+  height:420px; 
+  .codeType{
+    background-color: #d3e5ff;
+    height:42px;
+    line-height: 42px;
+    a{
+      color:#4a4a4a;
+      display:inline-block;
+      margin-right: 10px;
+      position: relative;
+      padding:0 12px;
+      &.active{
+        color:#007bff; 
+        background-color: #fff;
+        &::before{
+        position:absolute;
+        content:' ';
+        width:100%;
+        height:2px;
+        top:2px;
+        left:0;
+        background-color: #0062cc;
+      }
+      }
+    }
+  }
+  .generate-area{
+    background-color: #eaf2ff;
+    padding: 40px 0;
+    .areaContent{
+      width: 900px;
+      height: 300px;
+      margin-right: 80px;
+      textarea{
+        border:1px solid #dcdfe6;
+        width:100%;
+        height:100%;
+        padding: 12px;
+        border-radius: 4px;
+        color:darkgray;
+        resize:none;
+        &:focus{
+          outline: none;
+            border:1px solid #0062cc
+        }
+      }
+    }
+    .qrCode{
+      width:300px;
+
+      .codeImg{
+        height:300px;
+       background-color: #fff;
+      }
+    }
+  }
+}
+
