@@ -1,60 +1,549 @@
-#createCodeBox{
-  background-color:#fff;
-  height:420px; 
-  .codeType{
+#createCodeBox {
+  background-color: #fff;
+
+  .codeType {
     background-color: #d3e5ff;
-    height:42px;
+    height: 42px;
     line-height: 42px;
-    a{
-      color:#4a4a4a;
-      display:inline-block;
+
+    a {
+      color: #4a4a4a;
+      display: inline-block;
       margin-right: 10px;
       position: relative;
-      padding:0 12px;
-      &.active{
-        color:#007bff; 
+      padding: 0 12px;
+
+      &.active {
+        color: #007bff;
         background-color: #fff;
-        &::before{
-        position:absolute;
-        content:' ';
-        width:100%;
-        height:2px;
-        top:2px;
-        left:0;
-        background-color: #0062cc;
-      }
-      }
-    }
-  }
-  .generate-area{
-    background-color: #eaf2ff;
-    padding: 40px 0;
-    .areaContent{
-      width: 900px;
-      height: 300px;
-      margin-right: 80px;
-      textarea{
-        border:1px solid #dcdfe6;
-        width:100%;
-        height:100%;
-        padding: 12px;
-        border-radius: 4px;
-        color:darkgray;
-        resize:none;
-        &:focus{
-          outline: none;
-            border:1px solid #0062cc
+
+        &::before {
+          position: absolute;
+          content: ' ';
+          width: 100%;
+          height: 2px;
+          top: 2px;
+          left: 0;
+          background-color: #0062cc;
         }
       }
     }
-    .qrCode{
-      width:300px;
+  }
 
-      .codeImg{
-        height:300px;
-       background-color: #fff;
+  .generate-area {
+    background-color: #f2f7ff;
+    padding: 40px 0;
+
+    .areaContent {
+      width: 740px;
+      position: relative;
+
+      textarea {
+        border: 1px solid #eee;
+        width: 100%;
+        height: 280px;
+        padding: 12px;
+        border-radius: 4px;
+        color: #656565;
+        resize: none;
+
+
+        &:focus {
+          outline: none;
+          border: 1px solid #0062cc
+        }
+      }
+
+      .button {
+        padding: 6px 20px
+      }
+
+      .tooltip {
+        position: absolute;
+        top: 4px;
+        right: 8px;
+
+        .tag {
+          padding: 0 6px;
+          color: #9a9a9a;
+          font-size: 12px;
+          cursor: pointer;
+          background-color: #f2f2f2;
+          display: block;
+        }
+
+        .tooltiptext {
+          visibility: hidden;
+          width: 160px;
+          background-color: #f8f8f8;
+          color: #585858;
+          text-align: center;
+          font-size: 12px;
+          padding: 2px 0;
+          line-height: 18px;
+          /* 定位 */
+          position: absolute;
+          z-index: 1;
+          top: -28px;
+          right: -50px;
+        }
+
+        &:hover .tooltiptext {
+          visibility: visible;
+        }
+      }
+
+      .total-num {
+        font-size: 12px;
+        position: absolute;
+        top: 260px;
+        right: 8px;
+        color: #585858;
+        display: none;
+      }
+    }
+
+    .qrCode {
+      width: 300px;
+
+
+      .magic-btn {
+        background-color: #fff;
+        border: 1px solid #e6e6e6;
+        color: #535353;
+        cursor: pointer;
+
+        &:hover {
+          background: #f8f8f8;
+        }
+      }
+
+      .codeImg {
+        width: 300px;
+        height: 280px;
+        background-color: #fff;
+        cursor: pointer;
+        border: 1px solid #eee;
+
+        span {
+          color: #898989;
+          font-size: 16px;
+        }
+      }
+    }
+
+    .historyQrcode {
+
+      h5 {
+        line-height: 29px;
+        height: 45px;
+        margin-bottom: 0;
+
+        a {
+          color: #898989;
+          margin-right: 8px;
+
+          & * {
+            vertical-align: middle;
+          }
+
+          svg {
+            margin-right: 2px;
+          }
+
+          &:hover {
+            color: #007bff;
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .icon {
+        width: 14px;
+        height: 14px;
+        background-color: #d8d8d8;
+        border-radius: 50%;
+        margin-left: 6px;
+
+        svg {
+          display: block;
+        }
+      }
+
+      .historyContent {
+
+        .scrollWrap {}
+
+        .item {
+          width: 410px;
+          padding: 16px 10px;
+          background-color: #fff;
+          margin-bottom: 25px;
+          box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .06);
+          border-radius: 4px;
+
+          p {
+            margin-bottom: 0;
+          }
+
+          a:hover {
+            color: #007bff
+          }
+
+          .item-info {
+            padding-left: 10px;
+
+            p {
+              width: 200px;
+              margin-bottom: 0;
+            }
+
+            time {
+              font-size: 12px;
+              color: #787878;
+              display: block;
+            }
+          }
+
+          img {
+            display: block;
+            border: 1px dashed #eee;
+            width: 70px;
+            height: 70px;
+            padding: 2px;
+          }
+        }
       }
     }
   }
 }
 
+.common-showiTips {
+  width: 200px;
+  height: 280px;
+  background-color: #fff;
+  padding: 0 10px 10px;
+  box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .06);
+
+  .title {
+    color: #013e98;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    align-items: center;
+    line-height: 34px;
+
+    svg {
+      margin-right: 4px;
+    }
+  }
+
+  .first-line {
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 22px;
+
+    a {
+      color: #013e98
+    }
+
+  }
+
+  .second-line {
+    margin-top: 8px;
+    margin-bottom: 0;
+  }
+
+  hr {
+    color: #fff
+  }
+
+  p {
+    color: #585858
+  }
+}
+
+// 新闻
+#mdNews {
+  padding: 40px 0;
+  background-color: #4cbbb9;
+
+  .newsContent {
+    -webkit-column-count: 4;
+    /* Chrome, Safari, Opera */
+    -moz-column-count: 4;
+    /* Firefox */
+    column-count: 4;
+    column-gap: 20px;
+
+    .newsItem {
+      background-color: #f5f5f5;
+      padding: 10px 10px 20px 10px;
+      transition: all .5s;
+      cursor: pointer;
+      width: 305px;
+      height: 150px;
+      box-shadow: 0 1px 6px 0 rgba(0, 0, 0, .06);
+      border-radius: 6px;
+
+      h5 {
+        font-size: 16px;
+        color: #777;
+        display: block;
+        border-bottom: 1px dashed #ddd;
+        line-height: 38px;
+
+        a {
+          display: block;
+          text-align: center;
+        }
+
+      }
+
+      p {
+        color: #545454;
+        font-size: 14px;
+      }
+
+      time {
+        color: #2b2b2b;
+        font-size: 12px;
+        margin-left: 4px;
+      }
+
+      &:hover {
+        background-color: #4cbbb9;
+        border: 1px solid #ddd;
+
+        color: #fff;
+
+        p {
+          color: #fff
+        }
+
+        time {
+          color: #fff
+        }
+
+        a {
+          color: #fff
+        }
+      }
+    }
+  }
+}
+
+/*公共部分*/
+.commonSection {
+  .bigTitle {
+    font-size: 34px;
+    font-weight: 700;
+    color: #4a4a4a;
+  }
+
+  .bigInfo {
+    font-size: 18px;
+    line-height: 28px;
+    color: #777;
+    margin-top: 8px;
+  }
+
+}
+
+#mdSystem {
+  padding: 100px 0;
+  background-color: #fff;
+
+
+  .systemContent {
+    padding-top: 80px;
+
+
+    .systemItem {
+      .itemWord {
+        flex: 1;
+
+        .itemTitle {
+          font-size: 34px;
+          color: #007bff;
+          font-weight: 700;
+          line-height: 42px;
+        }
+
+        .item-block {
+          margin-top: 40px;
+
+          h5 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #4a4a4a;
+            line-height: 28px;
+            margin-bottom: 16px;
+          }
+
+          p {
+            margin-bottom: 8px;
+            font-size: 14px;
+            color: #777;
+            line-height: 22px;
+          }
+        }
+
+        &>p {
+          margin-top: 40px;
+
+          a {
+            color: #545454;
+
+            &:hover {
+              color: #007bff
+            }
+          }
+        }
+      }
+
+      .itemImg {
+        flex: 1.5;
+
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+
+    }
+
+    .Ndesc {
+      margin-top: 80px;
+    }
+  }
+}
+
+
+#HowDo {
+  background-color: #eff3c6;
+  padding: 80px 0;
+
+  .doContent {
+    margin-top: 56px;
+
+    .doItem {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 8px 16px 0 rgba(105, 123, 140, 0.1);
+      border-radius: 2px;
+      flex: 1;
+      margin: 0 10px;
+      text-align: center;
+
+      h5 {
+        color: #4a4a4a;
+        font-weight: bold;
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      p {
+        color: #777
+      }
+
+      a {
+        margin-top: 20px;
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+#partner {
+  padding: 80px;
+  background-color: #fff;
+
+  .partContent {
+    margin-top: 54px;
+
+    .partList {
+      margin-bottom: 54px;
+
+      .partItem {
+        border-bottom: 1px solid #ddd;
+        padding: 5px;
+        width: 300px;
+
+        .itemImg {
+          cursor: pointer;
+
+          img {
+            filter: grayscale(1);
+            display: block;
+
+            &:hover {
+              filter: grayscale(0);
+            }
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+
+/*
+公共部分
+*/
+.copyInfo {
+  color: #444;
+}
+
+#mdFooter {
+  background-color: #f2f7f7;
+
+  .footerTop {
+    padding: 32px 0 20px;
+
+    .navList {
+
+      .navItem {
+        h5 {
+          font-size: 16px;
+          margin-bottom: 20px;
+          font-weight: bold;
+          color: #007bff
+        }
+
+        ul {
+          li {
+            line-height: 18px;
+            margin-bottom: 10px;
+
+            a {
+              &:hover {
+                color: #007bff
+              }
+            }
+          }
+        }
+      }
+
+      .attent {
+        color: #535353;
+
+        img {
+          display: block;
+          width: 150px;
+        }
+      }
+    }
+  }
+
+  .footerBottom {
+    padding: 20px 0;
+    border-top: 1px solid #d0d0d0;
+
+    p {
+      margin-bottom: 0
+    }
+  }
+}

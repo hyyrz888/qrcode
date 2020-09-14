@@ -13,6 +13,7 @@ const {
 //设置环境变量
 process.env.NODE_ENV = 'development'
 
+console.log(this.mode)
 module.exports = {
   entry: {
     //首页
@@ -63,7 +64,7 @@ module.exports = {
         options: {
           limit: 8 * 1024,
           esModule: false,
-          name: "[hash_10].[ext]",
+          name: "[hash:10].[ext]",
           outputPath: 'images'
         }
       },
@@ -122,6 +123,11 @@ module.exports = {
     open: false,
     // 除了一些基本启动信息以外，其他内容都不要显示
     //quiet: true
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all'
+    }
   }
 
 }
