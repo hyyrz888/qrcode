@@ -1,14 +1,14 @@
-        .scrollWrap::-webkit-scrollbar-track {
+        textarea::-webkit-scrollbar-track {
           border-radius: 1em;
           background-color: rgba(50, 50, 50, .1);
         }
 
-        .scrollWrap::-webkit-scrollbar-thumb {
+        textarea::-webkit-scrollbar-thumb {
           border-radius: 1em;
           background-color: rgba(50, 50, 50, .3);
         }
 
-        .scrollWrap::-webkit-scrollbar {
+        textarea::-webkit-scrollbar {
           width: 5px;
           height: 5px;
         }

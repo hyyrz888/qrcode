@@ -58,7 +58,7 @@
           <div class="flex">
             <div class="typeItem">
               <a href="" class="active">文本</a>
-              <a href="">网址</a>
+              <a href="url.html">网址</a>
               <a href="">文件</a>
               <a href="">图片</a>
               <a href="">音视频</a>
@@ -81,13 +81,23 @@
 
           <div class="flex justify-between">
             <div class="areaContent flex flex-column align-center">
-              <textarea name="" id="text-content" cols="30" rows="10" placeholder="输入要生成二维码的文本"></textarea>
-              <button class="button poi rounded mt-3 f14" id="create-qrcode">生成二维码</button>
-              <div class="tooltip">
-                <span class="tag">高级编辑</span>
-                <span class="tooltiptext">支持图文排版和多媒体</span>
+              <div class="areaWrap">
+                <textarea name="" id="text-content" cols="30" rows="10" placeholder="输入要生成二维码的文本"></textarea>
+                <div class="tooltip">
+                  <span class="tag">高级编辑</span>
+                  <span class="tooltiptext">支持图文排版和多媒体</span>
+                </div>
+                <span class="total-num"><b class="ffs">0</b></span>
+                <div class="empty-tip text-center" style="display: none;">检测到输入内容为空，无法生成有效二维码，建议重新输入</div>
               </div>
-              <span class="total-num"><b class="ffs">0</b></span>
+              <div class="createCodeBox">
+                <button class="button poi rounded f14" id="js-create-qrcode">生成二维码</button>
+                <span class="urlCodeBox" style="display: none;">
+                  &emsp;&emsp;<a id="js-create-urlcode" class="urlCodeBtn button poi rounded f14 btn-success"
+                    data-loadingText="正在生成..." hidefocus="true" href="javascript:void(0);">
+                    生成网址码
+                  </a></span>
+              </div>
             </div>
             <div class="qrCode flex flex-column">
               <div class="codeImg flex align-center justify-center mb-3">

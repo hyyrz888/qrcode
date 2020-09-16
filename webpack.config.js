@@ -18,7 +18,7 @@ module.exports = {
   entry: {
     //首页
     index: ['./src/js/index.js', './src/index.html'],
-    product: ['./src/js/product.js', './src/product.html']
+    url: ['./src/js/url.js', './src/url.html'],
   },
   output: {
     path: resolve(__dirname, './dist'),
@@ -93,10 +93,10 @@ module.exports = {
 
     }),
     new HtmlWebpackPlugin({
-      title: "产品中心",
-      template: './src/product.html',
-      filename: 'product.html',
-      chunks: ['product']
+      title: "网址",
+      template: './src/url.html',
+      filename: 'url.html',
+      chunks: ['url']
     }),
     new MiniCssExtractPlugin({
       // 对输出的css文件进行重命名
@@ -123,6 +123,15 @@ module.exports = {
     open: false,
     // 除了一些基本启动信息以外，其他内容都不要显示
     //quiet: true
+    // proxy: {
+    //   '/api': {
+    //     target: 'https://cli.im',
+    //     ws: true, //代理websockets,配置这个参数
+    //     pathRewrite: { '^/api': '/' },
+    //     changeOrigin: true,
+    //     secure: false
+    //   }
+    // }
   },
   optimization: {
     splitChunks: {

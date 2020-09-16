@@ -1,0 +1,52 @@
+/* 浏览器升级提示 */
+.tip_box {
+  position: fixed;
+  width: 100%;
+  height: 40px;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  background: #fcf8e3;
+  border-top: 1px solid #faebcc;
+  text-align: center;
+  line-height: 40px;
+}
+
+.tip_box_main p {
+  font-size: 12px;
+  color: #666;
+  line-height: 40px;
+  display: inline-block;
+
+}
+
+.browser_link {
+  display: inline-block;
+  color: #f77a99 !important;
+  font-size: 12px;
+  line-height: 40px;
+}
+
+.browser_link:hover {
+  color: #f77a99 !important;
+}
+
+.close_tip {
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  color: #f77a99 !important;
+  width: 84px;
+  height: 26px;
+  line-height: 26px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #f77a99;
+  font-family: "Microsoft Yahei", "SimHei", Sans-serif;
+  margin-top: 6px;
+  margin-left: 5px;
+}
+
+.close_tip:hover {
+  color: #f77a99 !important;
+}
